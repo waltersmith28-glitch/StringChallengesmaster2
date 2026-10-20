@@ -16,28 +16,12 @@ public class B_HashtagExtractor {
     }
 
     public void extractHashtags(String post) {
-        String[] words = post.split(" ");
-        boolean first = true;
+        int endWord = post.indexOf("#");
+        String print = "";
 
-        for(int i = 0; i < words.length; i++){
-            String word = words[i];
-
-
-            if(word.startsWith("#")){
-                String hashtag = word;
-                while (hashtag.length() > 1 && !Character.isLetterOrDigit(hashtag.charAt(hashtag.length() - 1))){
-                    hashtag = hashtag.substring(0,hashtag.length() - 1);
-                }
-
-                if(!first){
-                    System.out.println(", ");
-                }
-                System.out.println("Hashtag; "+ hashtag);
-                first = false;
+        //while(index! == -1){
+            int endword =
+        }
             }
         }
         /* TODO: your code goes here */
-
-    }
-
-}

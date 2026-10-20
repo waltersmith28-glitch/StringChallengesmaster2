@@ -17,13 +17,35 @@ public class D_PasswordValidator {
 
     public D_PasswordValidator() {
         String password = "MyPassw0rd";
-        System.out.println("Valid password: " + isValidPassword(password));  // Output: Invalid password (false)
+        System.out.println("Vaalid password: " + isValidPassword(password));  // Output: Invalid password (false)
     }
 
     public boolean isValidPassword(String password) {
         /* TODO: your code goes here */
+        boolean upper = false;
+        boolean number = false;
 
-        return true; // this is a temporary return to avoid errors
+        for(int x = 0; x < password.length(); x++){
+            char c = password.charAt(x);
+            if(c >= 'A' && c <= 'Z'){
+                upper = true;
+            }
+            if(c >= '0' && c <= '9'){
+                number = true;
+            }
+        }
+        boolean haspassword = true;
+        if (password.contains("password") || password.contains("pa55word") || password.contains("pa55w0rd")
+                || password.contains("Pa55word") || password.contains("Pa5sword") || password.contains("Pas5word")
+                ||password.contains("Pa55w0rd") || password.contains("pas5word") || password.contains("passw0rd") ||
+                password.contains("Passw0rd") || password.contains("pa5sword") || password.contains("Password")){
+            haspassword = false;
+        }
+        return upper && number && haspassword;
+
+
+
+        //return true; // this is a temporary return to avoid errors
     }
 
 }

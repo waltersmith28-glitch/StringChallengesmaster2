@@ -29,9 +29,22 @@ public class C2_HiddenWordHardMode {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 /* TODO: your code goes here */
+                String start = "*";
+                String end = "~";
+                int indexstart = line.indexOf(start);
+                while(indexstart != -1) {
+                    int indexend = line.indexOf(end, indexstart);
+
+                    if(indexend == -1){
+                        break;
+                    }
+                    System.out.println(line.substring(indexstart + 1,indexend) + " ");
+                    indexstart = line.indexOf(start, indexend + 1);
+                }
 
             }
             scanner.close();
+            System.out.println();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred: " + e.getMessage());
         }
